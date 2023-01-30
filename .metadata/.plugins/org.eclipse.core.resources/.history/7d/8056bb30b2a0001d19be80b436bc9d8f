@@ -1,0 +1,46 @@
+package com.mandark;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.*;
+
+public class Question2 {
+
+	
+public static void main(String[] args) {
+        
+    	try {
+            
+            FileInputStream fis = new FileInputStream(args[0]);
+            Scanner sc = new Scanner(fis); // file to be scanned
+            while (sc.hasNextLine()) {
+            	String inputCommand = sc.nextLine();
+            	System.out.println(inputCommand);//input is Com
+            	
+            	// Split Beacuse Perfrom operation On DataStr.
+            	
+            	String[] input=inputCommand.trim().split(",");
+            	
+//            	System.out.println(Arrays.toString(input));
+            	if(input[1].equalsIgnoreCase("Manager") && input[2].equals("R&D")){
+            		//write In Manager.csv file
+            		System.out.println("Mager***");
+            		System.out.println(input[0]+" "+input[1]+" "+input[2]);
+            	}
+            	//Single Name File Wirte
+            	
+            	String[] name=input[0].split(" ");
+            	if(name.length==1) {
+            		System.out.println("Sibgle Na,e*******************");
+            		System.out.println(input[0]+" "+input[1]+" "+input[2]);
+            	}
+            	
+            	
+            }
+            sc.close(); // closes the scanner
+        } catch (IOException e) {
+        	System.err.println(e.getMessage());
+        }
+        
+    }
+}

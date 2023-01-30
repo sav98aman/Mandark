@@ -1,0 +1,48 @@
+package com.mandarkq3;
+
+import java.io.*;
+
+public class Question3 {
+	
+	public static void main(String[] args) {
+		try {
+	            
+	            FileInputStream fis = new FileInputStream(args[0]);
+	            Scanner sc = new Scanner(fis); // file to be scanned
+	            while (sc.hasNextLine()) {
+	            	String inputCommand = sc.nextLine();
+	//            	System.out.println(inputCommand);
+	            	String[] input=inputCommand.trim().split(" ");
+	            	
+	            	if(input[0].equalsIgnoreCase("BALANCE")) {
+	            		
+	            		Balance_Metro_Card metro_card=new Balance_Metro_Card(input[1],Integer.parseInt(input[2]));
+	            		metro_card.Update_Metro_Card_Balance();//add Balance card and balanced
+	            		
+	            		
+	            	}
+	            	if(input[0].equalsIgnoreCase("CHECK_IN")) {
+	            		
+	            		String Card_Number=input[1];
+	            		String Type=input[2];
+	            		String satation=input[3];
+	            		
+	            		Check_IN ch=new Check_IN(Type, satation, Card_Number);
+	            		
+	            		ch.Metro_Card_Check();
+	            		
+	            		
+	            	}
+	            	if(input[0].equalsIgnoreCase("PRINT_SUMMARY")) {
+	            		(new Check_IN()).Print_Summary();
+	            		
+	            		
+	            	}
+	            	
+	            }
+	            sc.close(); // closes the scanner
+	        } catch (IOException e) {
+	        	System.err.println(e.getMessage());
+	        }
+	}
+}

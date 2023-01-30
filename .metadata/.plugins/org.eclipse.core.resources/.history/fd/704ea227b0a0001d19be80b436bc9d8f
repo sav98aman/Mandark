@@ -1,0 +1,30 @@
+package com.mandark;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.*;
+
+public class Question2 {
+
+	
+public static void main(String[] args) {
+        
+    	try {
+            
+            FileInputStream fis = new FileInputStream(args[0]);
+            Scanner sc = new Scanner(fis); // file to be scanned
+            while (sc.hasNextLine()) {
+            	String inputCommand = sc.nextLine();
+//            	System.out.println(inputCommand);
+            	String[] input=inputCommand.trim().split(" ");
+            	
+            
+            	
+            }
+            sc.close(); // closes the scanner
+        } catch (IOException e) {
+        	System.err.println(e.getMessage());
+        }
+        
+    }
+}

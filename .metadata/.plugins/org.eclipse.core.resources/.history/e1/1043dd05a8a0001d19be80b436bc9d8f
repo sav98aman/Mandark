@@ -1,0 +1,27 @@
+package com.mandark;
+
+import java.io.*;
+import java.lang.reflect.Array;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class SwapMinMax {
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		
+		String[] strArr1 = bf.readLine().trim().split(",");
+		String[] strArr2 = bf.readLine().trim().split(",");
+		
+		int[] intArr1 = Arrays.stream(strArr1).mapToInt(Integer::parseInt).toArray();
+		int[] intArr2= Arrays.stream(strArr2).mapToInt(Integer::parseInt).toArray();
+		
+		System.out.println(Arrays.toString(intArr1));
+		
+//		int res=MaxMinSwap(intArr1,intArr2);
+		
+		System.out.println(res);
+	}
+
+}

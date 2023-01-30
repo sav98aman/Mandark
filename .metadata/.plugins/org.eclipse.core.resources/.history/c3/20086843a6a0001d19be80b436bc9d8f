@@ -1,0 +1,59 @@
+package com.mandark;
+
+import java.io.*;
+import java.util.*;
+import java.util.stream.Stream;
+
+public class SwapMinMax {
+	public static int findmax(List<Integer> list) {
+		int max=Integer.MIN_VALUE;
+		
+		for(int i=0;i<list.size();i++) {
+			if(list.get(i)>max) {
+				max=list.get(i);
+			}
+		}
+		return max;
+		
+	}
+	public static int MaxMinSwap(List<Integer> list1,List<Integer> list2) {
+		// rule list1 find min swap with max;
+		for(int i=1;i<list1.size();i++) {
+			
+			if(list1.get(i)<list2.get(i)) {
+				list1.add(i, list2.get(i));
+				list2.add(i, list1.get(i));
+			}
+		}
+		
+		// find max list1 maxin list2
+		int max_list1=findmax(list1);
+		int max_list2=findmax(list2);
+		
+		return (max_list1*max_list2);
+		
+	}
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		
+		String[] strArr1 = bf.readLine().trim().split(",");
+		String[] strArr2 = bf.readLine().trim().split(",");
+		
+		List<Integer>list1= Stream.of(strArr1).map(Integer::parseInt).collect(Collectors.toList());
+		List<Integer> list1 = new ArrayList<>();
+		List<Integer> list2 = new ArrayList<>();
+		
+		
+		
+		
+		for(int i=0;i<strArr1.length;i++) {
+			System.out.println(strArr1[i]);
+		}
+		
+		
+		int res=MaxMinSwap(list1,list1);
+		
+		System.out.println(res);
+	}
+
+}

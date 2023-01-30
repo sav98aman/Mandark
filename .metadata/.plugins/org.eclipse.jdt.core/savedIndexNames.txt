@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+C:\Users\Aman_pc\Desktop\Mandark\.metadata\.plugins\org.eclipse.jdt.core
+1808229435.index
+2099400329.index
+1865797976.index
+2442798468.index
+482366637.index
